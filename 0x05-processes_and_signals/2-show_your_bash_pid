@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays lines of a bash and to easily get the PID of your Bash process
+
+ps -aux | grep bash
