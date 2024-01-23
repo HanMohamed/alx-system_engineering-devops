@@ -9,6 +9,4 @@ sudo apt-get -y install nginx
 sudo service nginx start
 
 # Change the default webpage
-sudo touch index.html
-echo "Hello World!" > index.html
-sudo mv index.html /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
