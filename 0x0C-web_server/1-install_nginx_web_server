@@ -10,5 +10,5 @@ sudo service nginx start
 
 # Change the default webpage
 sudo touch index.html
-sudo echo "Hello World!" > index.html
+echo "Hello World!" > index.html
 sudo mv index.html /var/www/html/index.html
