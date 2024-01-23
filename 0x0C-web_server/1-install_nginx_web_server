@@ -11,5 +11,3 @@ sudo service nginx start
 # Change the default webpage
 touch /var/www/html/index.html
 echo "Hello World!" > index.html
-
-sudo service nginx stop
