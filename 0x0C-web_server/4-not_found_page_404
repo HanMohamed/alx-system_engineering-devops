@@ -13,9 +13,10 @@ sed -i "s/_;/_;\nlocation = \/redirect_me {\nreturn 301  https:\/\/www.youtube.c
 #location = /redirect_me {
 # return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
 #}
+mkdir /var/www/nginx/errors
 
 sed -i "s/_;/_;\nerror_page 404 \/404.html;\nlocation = \/404.html {\n\troot  \/var\/www\/nginx\/errors/\;\n}/" /etc/nginx/sites-available/default; 
-mkdir /var/www/nginx/errors
+
 echo "Ceci n'est pas une page" > /var/www/nginx/errors/404.html
 
 #start nginx
