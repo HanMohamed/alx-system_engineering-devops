@@ -20,7 +20,7 @@ sudo mkdir /var/www/errors
 
 echo -e "Ceci n'est pas une page\n" > /var/www/errors/404.html
 
-sed -i "s/_;/_;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot  \/var\/www\/errors;\n\t}/" /etc/nginx/sites-available/default; 
+sed -i "s/_;/_;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot  \/var\/www\/errors;\n\tinternal;\n\t}/" /etc/nginx/sites-available/default; 
 
 #start nginx
 sudo service nginx start
