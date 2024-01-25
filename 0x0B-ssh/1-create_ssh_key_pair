@@ -5,4 +5,7 @@
 # The created key must be protected by the passphrase betty
 
 # -b: the number of bits you would like.
-ssh-keygen school betty betty 
+ssh-keygen
+school
+betty
+betty
