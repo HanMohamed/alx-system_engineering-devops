@@ -1,3 +1,3 @@
 #Execute a command
-exec {'pkill killmenow':
+exec {'pkill ./killmenow':
 }
