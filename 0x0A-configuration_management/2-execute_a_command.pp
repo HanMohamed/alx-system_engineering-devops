@@ -1,5 +1,5 @@
 #Execute a command
 exec {'pkill killmenow':
   command => 'pkill killmenow',
-  path    => './killmenow'
+  path    => '/bin/'
 }
