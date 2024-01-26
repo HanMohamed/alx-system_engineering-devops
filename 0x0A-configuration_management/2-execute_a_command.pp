@@ -1,3 +1,5 @@
 #Execute a command
-exec {'pkill ./killmenow':
+exec {'pkill killmenow':
+  command => 'pkill killmenow',
+  path    => './killmenow'
 }
