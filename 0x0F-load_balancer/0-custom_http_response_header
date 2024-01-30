@@ -6,13 +6,13 @@ sudo apt-get -y install nginx
 
 sudo chmod o+w /etc/nginx/sites-available/default
 
-mkdir -p /var/www/html
-touch /var/www/html/index.html
-echo "Hello World" > /var/www/html/index.html
+sudo mkdir -p /var/www/html
+sudo touch /var/www/html/index.html
+sudo echo "Hello World" > /var/www/html/index.html
 
-mkdir -p /var/www/errors
-touch /var/www/errors/404.html
-echo "Ceci n'est pas une page" > /var/www/errors/404.html
+sudo mkdir -p /var/www/errors
+sudo touch /var/www/errors/404.html
+sudo echo "Ceci n'est pas une page" > /var/www/errors/404.html
 
 printf %s "server {
         listen 80 default_server;
