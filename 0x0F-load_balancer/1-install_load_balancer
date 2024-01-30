@@ -9,11 +9,11 @@ frontend web-frontend
 backend web-backend
         balance roundrobin
         server web01 100.25.153.226:80 check
-        server web02 3.83.253.145:80 check" > /etc/haproxy/newhpa
+        server web02 3.83.253.145:80 check" > new_conf
 
 sudo chmod o+w /etc/haproxy/haproxy.cfg
 
-sudo cat /etc/haproxy/newhpa >> /etc/haproxy/haproxy.cfg
+sudo cat new_confg >> /etc/haproxy/haproxy.cfg
 
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
