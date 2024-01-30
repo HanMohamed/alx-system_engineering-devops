@@ -1,2 +1,13 @@
 #!/usr/bin/env bash
-# Install your load balancer
+# Install your load balancer on lb-01 server.
+
+sudo printf %s "frontend web-frontend
+        bind *:80
+        mode http
+        default_backend web-backend
+backend web-backend
+        balance roundrobin
+        server web01 100.25.153.226:80 check
+        server web02 3.83.253.145:80 check" > /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
