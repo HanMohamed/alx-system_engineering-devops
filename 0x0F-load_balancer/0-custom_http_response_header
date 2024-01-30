@@ -4,6 +4,8 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 
+sudo chmod o+w /etc/nginx/sites-available/default
+
 mkdir -p /var/www/html
 touch /var/www/html/index.html
 echo "Hello World" > /var/www/html/index.html
