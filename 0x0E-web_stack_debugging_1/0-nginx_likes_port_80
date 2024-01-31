@@ -2,5 +2,4 @@
 # 0. Nginx likes port 80
 sudo apt-get update
 sudo apt-get -y install nginx
-mv /var/www/html/index.html /var/www/html/old_index.html
 sudo service nginx start
