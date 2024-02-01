@@ -5,5 +5,5 @@
 
 for i in *
 do
-    echo "$i | sed "s/^[0-9]*-//""
+    echo "$i" | sed "s/^[0-9]*-//"
 done
