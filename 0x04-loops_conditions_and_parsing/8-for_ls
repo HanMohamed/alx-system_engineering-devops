@@ -5,6 +5,5 @@
 
 for i in *
 do
-    # echo "${i//.*-/p/}"
-    echo "$i" | sed "s/.*-//"
+    echo "$i" | cut -d "-" -f 2
 done
