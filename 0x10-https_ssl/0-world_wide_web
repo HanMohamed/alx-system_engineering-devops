@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # 0. World wide web
 
-if [[ $# == 2 ]]
+if [$# == 1]
+then
+    all_subdomains()
+elif [ $# == 2 ]
 then
     domain=$2
     domain="${domain}." 
