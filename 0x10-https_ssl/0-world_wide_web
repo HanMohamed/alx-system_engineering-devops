@@ -1,12 +1,33 @@
 #!/usr/bin/env bash
 # 0. World wide web
 
-if [[ $# == 2 ]]
-then
-    domain=$2
-    domain="${domain}." 
-    domain="${domain}${1}"
+print_record() {
     RECORD_TYPE=$(dig $domain | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
     DESTINATION=$(dig $domain | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
-    echo 'The subdomain' $2 'is a' $RECORD_TYPE 'record and points to' $DESTINATION
+    echo 'The subdomain' $subdomain 'is a' $RECORD_TYPE 'record and points to' $DESTINATION
+}
+
+if [ $# == 1 ]
+then
+    subdomain='www'
+    domain="${subdomain}"."${1}"
+    print_record $domain $subdomain
+
+    subdomain='lb-01'
+    domain="${subdomain}"."${1}"
+    print_record $domain $subdomain
+
+    subdomain='web-01'
+    domain="${subdomain}"."${1}"
+    print_record $domain $subdomain
+
+    subdomain='web-02'
+    domain="${subdomain}"."${1}"
+    print_record $domain $subdomain
+
+elif [ $# == 2 ]
+then
+    subdomain=$2
+    domain="${2}"."${1}"
+    print_record $domain $subdomains
 fi
