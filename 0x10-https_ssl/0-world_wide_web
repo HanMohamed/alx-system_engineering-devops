@@ -1,2 +1,12 @@
 #!/usr/bin/env bash
-#
+# 0. World wide web
+
+if [[ $# == 2 ]]
+then
+    domain=$2
+    domain="${domain}." 
+    domain="${domain}${1}"
+    RECORD_TYPE=$(dig $domain | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+    DESTINATION=$(dig $domain | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+    echo 'The subdomain' $2 'is a' $RECORD_TYPE 'record and points to' $DESTINATION
+fi
