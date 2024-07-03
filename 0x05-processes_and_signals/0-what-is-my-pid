@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script displays its own PID: The PID is stored in $$
 
-echo pid
+echo $$
